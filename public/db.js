@@ -1,11 +1,12 @@
 let db;
 // create a new db request for a "budget" database.
-const request = indexedDB.open("budget", 2);
+const request = indexedDB.open("budgetpwa", 2);
 
 request.onupgradeneeded = function(event) {
    // create object store called "pending" and set autoIncrement to true
   const db = event.target.result;
   db.createObjectStore("pending", { autoIncrement: true });
+  console.log("pending");
 };
 
 request.onsuccess = function(event) {
@@ -30,6 +31,7 @@ function saveRecord(record) {
 
   // add record to your store with add method.
   store.add(record);
+  console.log("added");
 }
 
 function checkDatabase() {

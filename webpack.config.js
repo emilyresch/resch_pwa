@@ -20,6 +20,14 @@ const config = {
       background_color: "#eedff5",
       theme_color: "#ffffff",
       start_url: "/",
+      icons: [{
+        src: "./public/icons/icon-192x192.png",
+        sizes: "192x192"
+    }, {
+        src: "./public/icons/icon-512x512.png",
+        sizes: "512x512"
+    }
+],
     }),
     
   ],
