@@ -6,7 +6,6 @@ request.onupgradeneeded = function(event) {
    // create object store called "pending" and set autoIncrement to true
   const db = event.target.result;
   db.createObjectStore("pending", { autoIncrement: true });
-  console.log("pending");
 };
 
 request.onsuccess = function(event) {
@@ -31,7 +30,6 @@ function saveRecord(record) {
 
   // add record to your store with add method.
   store.add(record);
-  console.log("added");
 }
 
 function checkDatabase() {
@@ -59,7 +57,7 @@ function checkDatabase() {
 
         // access your pending object store
         const store = transaction.objectStore("pending");
-
+        
         // clear all items in your store
         store.clear();
       });
